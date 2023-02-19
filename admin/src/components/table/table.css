@@ -1,0 +1,14 @@
+.product{
+    display: flex;
+    align-items: center;
+}
+
+.status{
+    padding: 5px;
+    border-radius: 5px;
+    width: max-content;
+    height: max-content;
+}
+.status, .pending{
+    color: goldenrod;
+}

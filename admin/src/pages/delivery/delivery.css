@@ -1,0 +1,111 @@
+.titleContainer{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 15px;
+    box-shadow: -1px -8px 5px -4px rgb(143, 108, 175);
+    -webkit-box-shadow: -1px -8px 20px -4px rgb(63, 62, 65);
+    -moz-box-shadow: -1px -8px 10px -4px rgb(162, 117, 204);
+    border-radius: 5px;
+    justify-content: center;
+    width: 100%;
+    height: 285px;
+}
+.delInp{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 25px;
+}
+.container{
+    display: flex;
+}
+.formContainer{
+    display: flex;
+    margin: 15px;
+    padding: 15px;
+    box-shadow: -1px -8px 10px -4px rgb(143, 108, 175);
+    -webkit-box-shadow: -1px -8px 20px -4px rgb(137, 118, 156);
+    -moz-box-shadow: -1px -8px 10px -4px rgb(162, 117, 204);
+    border-radius: 10px;
+}
+.image{
+    display: flex;
+    flex-direction: column;
+    flex: 4;
+    align-items: center;
+}
+.image h2{
+    font-weight: bold;
+    border-bottom: 1px solid rgb(130, 128, 128);
+}
+img{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 1px solid lightgray;
+    object-fit:scale-down;
+    align-items: center;
+    margin: auto;
+    text-align: center;
+}
+.inputs{
+    display: flex;
+    flex: 5;
+    margin: 10px;
+    width: max-content;
+    height: max-content;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.formInput{
+    width: 500px;
+    border-bottom: 1px solid lightgray;
+    padding: 10px;
+    font-size: large;
+}
+
+.btn input{
+    display: flex;
+    padding: 5px;
+    border: 0.5px solid lightgray;
+    width: 50%;
+    background-color: crimson;
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    justify-content: center;
+    font-weight: bold;
+    height: 50px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+input{
+    width: 100%;
+    border: none;
+}
+label{
+    display: flex;
+    margin: 10px;
+    margin-bottom: 15px;
+    gap: 10px;
+    font-size: large;
+}
+
+/* .button{
+    border: 0.5px solid lightseagreen;
+    background-color: rgb(12, 105, 100);
+    width: 50%;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 25px;
+} */
+.icon2{
+    color: crimson;
+    font-size: 50px;
+    width: 50px;
+    height: 50px;
+}

@@ -1,0 +1,7 @@
+.jodit-status-bar{
+    visibility: hidden;
+}
+#outlined-name::placeholder{
+    align-items:center;
+    text-align: center;
+}

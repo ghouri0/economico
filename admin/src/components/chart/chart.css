@@ -1,0 +1,14 @@
+.chart{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 3;
+    padding: 5px;
+    /* border: 1px solid rgb(199, 202, 202); */
+    /* box-shadow: -1px -8px 10px -4px rgb(143, 108, 175);
+    -webkit-box-shadow: -1px -8px 20px -4px rgb(235, 233, 233);
+    -moz-box-shadow: -1px -8px 10px -4px rgb(162, 117, 204); */
+    border-radius: 5px;
+    height: max-content;
+    /* background-color: rgb(218, 217, 217); */
+}
