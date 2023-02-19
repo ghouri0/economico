@@ -1,0 +1,44 @@
+#title{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 550;
+    margin: 15px;
+}
+.label{
+    font-size:larger;
+    font-weight:500;
+    font-family: 'Times New Roman', Times, serif;
+}
+.input{
+    font-weight: 500;
+    font-size: large;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 5px;
+    height:fit-content;
+}
+.login{
+    font-size: larger;
+    width: 200px;
+    height: 50px;
+    border-radius: 5px;
+    border-style:solid;
+
+}
+#form{
+    color:white;    
+    padding: 25px;
+    width: 550px;
+    backdrop-filter: blur(19px) saturate(162%);
+    -webkit-backdrop-filter: blur(19px) saturate(162%);
+    background-color: rgba(17, 25, 40, 0.74);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+.error{
+    text-align: center;
+    color: rgb(238, 11, 11);
+    font-style: oblique;
+    font-weight: 50px;
+}
+

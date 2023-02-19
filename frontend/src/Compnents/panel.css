@@ -1,0 +1,309 @@
+.titleContainer{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 15px;
+    box-shadow: -1px -8px 5px -4px rgb(255, 255, 255);
+    -webkit-box-shadow: -1px -8px 20px -4px rgb(188, 188, 188);
+    -moz-box-shadow: -1px -8px 10px -4px rgb(255, 255, 255);
+    border-radius: 5px;
+    justify-content: center;
+    width: 100%;
+    height: max-content;
+    background-color: rgb(255, 255, 255);
+    gap: 35px;
+}
+/***
+User Profile Sidebar by @keenthemes
+A component of Metronic Theme - #1 Selling Bootstrap 3 Admin Theme in Themeforest: https://j.mp/metronictheme
+Licensed under MIT
+***/
+
+/* body {
+    background: #F1F3FA;
+  } */
+  
+  /* Profile container */
+  /* .profile {
+    margin: 20px 0;
+  } */
+  
+  /* Profile sidebar */
+  .profile-sidebar {
+    padding: 20px 0 10px 0;
+    background: #fff;
+  }
+  
+  .profile-userpic img {
+    float: none;
+    margin: 0 auto;
+    width: 150px;
+    height: 150px;
+    -webkit-border-radius: 50% !important;
+    -moz-border-radius: 50% !important;
+    border-radius: 50% !important;
+  }
+  
+  .profile-usertitle {
+    text-align: center;
+    /* margin-top: 10px; */
+  }
+  
+  .profile-usertitle-name {
+    color: #3a4e67;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+  
+  .profile-usertitle-job {
+    text-transform: uppercase;
+    color: #294862;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  .profile-userbuttons {
+    text-align: center;
+    margin-top: 5px;
+  }
+  
+  .profile-userbuttons .btn {
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 6px 15px;
+    margin-right: 5px;
+  }
+  
+  .profile-userbuttons .btn:last-child {
+    margin-right: 0px;
+  }
+      
+  .profile-usermenu {
+    margin-top: 30px;
+  }
+  
+  .profile-usermenu ul li {
+    border-bottom: 1px solid #f0f4f7;
+  }
+  
+  .profile-usermenu ul li:last-child {
+    border-bottom: none;
+  }
+  
+  .profile-usermenu ul li a {
+    color: #93a3b5;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  
+  .profile-usermenu ul li a i {
+    margin-right: 8px;
+    font-size: 14px;
+  }
+  
+  .profile-usermenu ul li a:hover {
+    background-color: #fafcfd;
+    color: #5b9bd1;
+  }
+  
+  .profile-usermenu ul li.active {
+    border-bottom: none;
+  }
+  
+  .profile-usermenu ul li.active a {
+    color: #5b9bd1;
+    background-color: #f6f9fb;
+    border-left: 2px solid #5b9bd1;
+    margin-left: -2px;
+  }
+  
+  /* Profile Content */
+  .profile-content {
+    background: #fff;
+    min-height: 460px;
+    margin-top: 0;
+  }
+  
+  /* a, button, code, div, img, input, label, li, p, pre, select, span, svg, table, td, textarea, th, ul {
+      -webkit-border-radius: 0!important;
+      -moz-border-radius: 0!important;
+      border-radius: 0!important;
+  } */
+  .dashboard-stat, .portlet {
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      -ms-border-radius: 4px;
+      -o-border-radius: 4px;
+  }
+  .portlet {
+      margin-top: 0;
+      margin-bottom: 25px;
+      padding: 0;
+      border-radius: 4px;
+  }
+  .portlet.bordered {
+      border-left: 2px solid #e6e9ec!important;
+  }
+  .portlet.light {
+      padding: 12px 20px 15px;
+      background-color: #fff;
+  }
+  .portlet.light.bordered {
+      border: 1px solid #e7ecf1!important;
+  }
+  .list-separated {
+      margin-top: 10px;
+      margin-bottom: 15px;
+  }
+  .profile-stat {
+      padding-bottom: 20px;
+      border-bottom: 1px solid #f0f4f7;
+  }
+  .profile-stat-title {
+      color: #7f90a4;
+      font-size: 25px;
+      text-align: center;
+  }
+  .uppercase {
+      text-transform: uppercase!important;
+  }
+  
+  .profile-stat-text {
+      color: #5b9bd1;
+      font-size: 10px;
+      font-weight: 600;
+      text-align: center;
+  }
+  .profile-desc-title {
+      color: #7f90a4;
+      font-size: 17px;
+      font-weight: 600;
+  }
+  .profile-desc-text {
+      color: #7e8c9e;
+      font-size: 14px;
+  }
+  .margin-top-20 {
+      margin-top: 20px!important;
+  }
+  [class*=" fa-"]:not(.fa-stack), [class*=" glyphicon-"], [class*=" icon-"], [class^=fa-]:not(.fa-stack), [class^=glyphicon-], [class^=icon-] {
+      display: inline-block;
+      line-height: 14px;
+      -webkit-font-smoothing: antialiased;
+  }
+  .profile-desc-link i {
+      width: 22px;
+      font-size: 19px;
+      color: #abb6c4;
+      margin-right: 5px;
+  }
+  
+  
+/* .delInp{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 25px;
+} */
+/* .container{
+    display: flex;
+} */
+/* .formContainer{
+    display: flex;
+    margin: 15px;
+    padding: 15px;
+    box-shadow: -1px -8px 10px -4px rgb(143, 108, 175);
+    -webkit-box-shadow: -1px -8px 20px -4px rgb(137, 118, 156);
+    -moz-box-shadow: -1px -8px 10px -4px rgb(162, 117, 204);
+    border-radius: 10px;
+}
+.image{
+    display: flex;
+    flex-direction: column;
+    flex: 4;
+    align-items: center;
+}
+.image h2{
+    font-weight: bold;
+    border-bottom: 1px solid rgb(130, 128, 128);
+} */
+/* img{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 1px solid lightgray;
+    object-fit:scale-down;
+    align-items: center;
+    margin: auto;
+    text-align: center;
+} */
+/* .inputs{
+    display: flex;
+    flex: 5;
+    margin: 10px;
+    width: max-content;
+    height: max-content;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.formInput{
+    width: 500px;
+    border-bottom: 1px solid lightgray;
+    padding: 10px;
+    font-size: large;
+}
+
+.btn input{
+    display: flex;
+    padding: 5px;
+    border: 0.5px solid lightgray;
+    width: 50%;
+    background-color: crimson;
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    justify-content: center;
+    font-weight: bold;
+    height: 50px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+/* input{
+    width: 100%;
+    border: none;
+} */
+label{
+    display: flex;
+    margin: 10px;
+    margin-bottom: 15px;
+    gap: 10px;
+    font-size: large;
+} */
+.heading {
+    font-size: 20px;
+    font-weight: bolder;
+    color: black;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+/* .button{
+    border: 0.5px solid lightseagreen;
+    background-color: rgb(12, 105, 100);
+    width: 50%;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 25px;
+} */
+.icon2{
+    color: crimson;
+    font-size: 50px;
+    width: 50px;
+    height: 50px;
+}

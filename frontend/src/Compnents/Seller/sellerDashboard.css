@@ -1,0 +1,57 @@
+.widgets {
+  margin: 25px;
+  padding: 10px;
+  gap: 50px;
+  justify-content: space-around;
+}
+.sales {
+    width: 650px;
+    height: 550px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.35);
+  margin: auto;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+.titleContainer{
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+  padding: 15px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.35);
+  border-radius: 5px;
+  justify-content: center;
+  width: 100%;
+  height: 285px;
+}
+.delInp{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  gap: 25px;
+  margin: 15px;
+}
+
+.image1{
+  display: flex;
+  flex-direction: column;
+  flex: 4;
+  align-items: center;
+}
+.carosal{
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.35);
+  padding: 25px;
+  gap: 15px;
+}
+.products{
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.35);
+  padding: 25px;
+  gap: 15px;
+}
