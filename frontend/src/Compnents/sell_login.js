@@ -65,7 +65,7 @@ export default function Sell_login({login, setLogin}) {
     else {
       user = result.data;  // save information into user
       toast("Successfully Logged In");
-      localStorage.setItem("Name", result.data.sellerName);
+//       localStorage.setItem("Name", result.data.sellerName);
       localStorage.setItem("SellerName", result.data.sellerName);
       localStorage.setItem("SellerEmail", result.data.emailID);
       localStorage.setItem("SellerStore", result.data.storeName);
