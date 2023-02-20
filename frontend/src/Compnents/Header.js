@@ -221,9 +221,9 @@ function Header() {
         .getItem("Name")
         .charAt(0)
         .toUpperCase();
-    } else if (localStorage.getItem("SellerEmail") && sellLogin) {
+    } else if (localStorage.getItem("SellerName") && sellLogin) {
       return localStorage
-        .getItem("SellerEmail")
+        .getItem("SellerName")
         .charAt(0)
         .toUpperCase();
     } else {
