@@ -27,47 +27,29 @@ export default function ProductHub({ login, setLogin }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const [product, setProduct] = useState([]);
+  const [product, setProduct] = useState({});
   const [score, setScore] = useState(null);
   const [loader, setLoading] = useState(false);
-  const [review, setReview] = useState(JSON.parse(location.state.item));
+  // const [review, setReview] = useState(JSON.parse(location.state.item));
 
   useEffect(async (e) => {
-    console.log("location:   ", location.state.item);
-    console.log("parse:   ", JSON.parse(location.state.item));
-    let query = { data: [] };
-    if (review.reviews.length > 0) {
-      setLoading(true);
-      query = await axios.post("/getSentimentScore", { data: review.reviews });
+    if (location.state.item) {
+      setProduct(location.state.item);
     }
-    product.push({
-      product: location.state.prod.name,
-      image: location.state.prod.image,
-      price: {
-        actual: 0,
-        discount: parseInt(location.state.prod.price),
-      },
-      seller: location.state.prod.seller,
-    });
-    console.log("prod......", product);
-    console.log(query.data);
-    // handleScore(query.data);
-    setLoading(false);
-  }, []);
-
-  console.log(product);
-  console.log(product.reviews);
-
-  // console.log("score....", score);
-
-  // function handleScore(d) {
-  //   setScore(d);
-  // }
-
+  });
   function handleAddToCart(product) {
     if (!login) {
       navigate("/login");
     } else {
+      const item = {
+        product: product.name,
+        image: product.image,
+        price: {
+          actual: 0,
+          discount: parseInt(product.price),
+        },
+        seller: product.seller,
+      };
       dispatch(addToCart(product));
       toast("Added to Cart");
     }
@@ -124,65 +106,45 @@ export default function ProductHub({ login, setLogin }) {
     }
   };
 
-  if (loader) {
-    return (
-      <div
-        style={{
-          height: "calc(100vh)",
-          display: "flex",
-          textAlign: "center",
-          flex: 1,
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <ClipLoader
-          size={200}
-          cssOverride={{ borderWidth: 8 }}
-          color={"red"}
-          loading={true}
-        />
-      </div>
-    );
-  } else {
+
     return (
       <div>
-        {product.map((item) => (
-          <div style={{ paddingBottom: 100 }}>
-            <Link className="btn btn-light my-3" to="/">
-              Go Back
-            </Link>
-            <Row>
-              <Col
-                md={3}
-                style={{
-                  backgroundColor: "white",
-                  padding: 20,
-                  boxShadow: "0 2px 10px rgb(0 0 0 / 30%)",
-                }}
-              >
-                <Image
-                  src={item.image}
-                  alt={item.product}
-                  fluid
-                  style={{ height: 250, width: 250 }}
-                />
-              </Col>
-              <Col md={3} style={{ padding: 0 }}>
-                <ListGroup variant="flush">
-                  <ListGroup.Item style={{ padding: 0 }}>
-                    <h3
-                      style={{
-                        fontWeight: "bold",
-                        overflow: "hidden",
-                        textOverflow: "ellipsis",
-                        height: 100,
-                      }}
-                    >
-                      {item.product}
-                    </h3>
-                  </ListGroup.Item>
-                  {/* <ListGroup.Item>
+        {/* {product.map((item) => ( */}
+        <div style={{ paddingBottom: 100 }}>
+          <Link className="btn btn-light my-3" to="/">
+            Go Back
+          </Link>
+          <Row>
+            <Col
+              md={3}
+              style={{
+                backgroundColor: "white",
+                padding: 20,
+                boxShadow: "0 2px 10px rgb(0 0 0 / 30%)",
+              }}
+            >
+              <Image
+                src={product.image}
+                alt={product.name}
+                fluid
+                style={{ height: 250, width: 250 }}
+              />
+            </Col>
+            <Col md={3} style={{ padding: 0 }}>
+              <ListGroup variant="flush">
+                <ListGroup.Item style={{ padding: 0 }}>
+                  <h3
+                    style={{
+                      fontWeight: "bold",
+                      overflow: "hidden",
+                      textOverflow: "ellipsis",
+                      height: 100,
+                    }}
+                  >
+                    {product.name}
+                  </h3>
+                </ListGroup.Item>
+                {/* <ListGroup.Item>
                     <Rating
                       value={
                         // score != null &&
@@ -218,88 +180,86 @@ export default function ProductHub({ login, setLogin }) {
                       }
                     />
                   </ListGroup.Item> */}
-                  <ListGroup.Item>
-                    <div className="row">
-                      <div className="col">
-                        <strong>Price:</strong>
-                      </div>
-                      <div className="col">{item.price.discount} Rs</div>
+                <ListGroup.Item>
+                  <div className="row">
+                    <div className="col">
+                      <strong>Price:</strong>
                     </div>
-                  </ListGroup.Item>
-                  <ListGroup.Item>
-                    <div className="row">
-                      <div className="col">
-                        <strong>Brand:</strong>
-                      </div>
-                      <div className="col">{location.state.prod.brand}</div>
+                    <div className="col">{product.price} Rs</div>
+                  </div>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <div className="row">
+                    <div className="col">
+                      <strong>Brand:</strong>
                     </div>
-                  </ListGroup.Item>
-                  <ListGroup.Item>
-                    <div className="row">
-                      <div className="col">
-                        <strong>Category:</strong>
-                      </div>
-                      <div className="col">{location.state.prod.category}</div>
+                    <div className="col">{product.brand}</div>
+                  </div>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <div className="row">
+                    <div className="col">
+                      <strong>Category:</strong>
                     </div>
-                  </ListGroup.Item>
-                  <ListGroup.Item>
-                    <div className="row">
-                      <div className="col">
-                        <strong>Description:</strong>
-                      </div>
-                      <div className="col">
-                        {location.state.prod.description}
-                      </div>
+                    <div className="col">{product.category}</div>
+                  </div>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <div className="row">
+                    <div className="col">
+                      <strong>Description:</strong>
                     </div>
-                  </ListGroup.Item>
-                  <ListGroup.Item>
-                    <div className="row">
-                      <div className="col">
-                        <strong>Available at:</strong>
-                      </div>
-                      <div className="col">ShoppingGuide</div>
+                    <div className="col">{product.description}</div>
+                  </div>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <div className="row">
+                    <div className="col">
+                      <strong>Available at:</strong>
                     </div>
+                    <div className="col">{product.seller}</div>
+                  </div>
+                </ListGroup.Item>
+              </ListGroup>
+            </Col>
+            <Col md={3}>
+              <Card style={{ paddingTop: 10, width: "auto" }}>
+                <ListGroup variant="flush">
+                  <ListGroup.Item>
+                    <Row>
+                      <Col>Price:</Col>
+                      <Col>
+                        <strong>{product.price} Rs</strong>
+                      </Col>
+                    </Row>
                   </ListGroup.Item>
-                </ListGroup>
-              </Col>
-              <Col md={3}>
-                <Card style={{ paddingTop: 10, width: "auto" }}>
-                  <ListGroup variant="flush">
-                    <ListGroup.Item>
-                      <Row>
-                        <Col>Price:</Col>
-                        <Col>
-                          <strong>{location.state.prod.price} Rs</strong>
-                        </Col>
-                      </Row>
-                    </ListGroup.Item>
 
-                    <ListGroup.Item>
-                      <Row>
-                        <Col>Status:</Col>
-                        <Col>In Stock</Col>
-                      </Row>
-                    </ListGroup.Item>
+                  <ListGroup.Item>
+                    <Row>
+                      <Col>Status:</Col>
+                      <Col>In Stock</Col>
+                    </Row>
+                  </ListGroup.Item>
 
-                    <ListGroup.Item>
-                      <Row>
-                        <Col>Seller:</Col>
-                        <Col>{location.state.prod.seller}</Col>
-                      </Row>
-                    </ListGroup.Item>
+                  <ListGroup.Item>
+                    <Row>
+                      <Col>Seller:</Col>
+                      <Col>{product.seller}</Col>
+                    </Row>
+                  </ListGroup.Item>
 
-                    <ListGroup.Item>
-                      <Button
-                        onClick={() => {
-                          handleAddToCart(item);
-                        }}
-                        className="btn-block"
-                        type="button"
-                      >
-                        <ShoppingCartIcon style={{ fontSize: 27, width: 30 }} />
-                        Add to Cart
-                      </Button>
-                      {/* <ButtonGroup
+                  <ListGroup.Item>
+                    <Button
+                      onClick={() => {
+                        handleAddToCart();
+                      }}
+                      className="btn-block"
+                      type="button"
+                    >
+                      <ShoppingCartIcon style={{ fontSize: 27, width: 30 }} />
+                      Add to Cart
+                    </Button>
+                    {/* <ButtonGroup
                         disableElevation
                         variant="contained"
                         aria-label="Disabled elevation buttons"
@@ -338,27 +298,27 @@ export default function ProductHub({ login, setLogin }) {
                           Add to Compare
                         </ButtonMUI>
                       </ButtonGroup> */}
-                    </ListGroup.Item>
-                  </ListGroup>
-                </Card>
-              </Col>
-              <Toaster
-                toastOptions={{
-                  className: "",
-                  style: {
-                    backgroundColor: "#2d9632",
-                    padding: "5px",
-                    color: "white",
-                    width: "250px",
-                    height: "40px",
-                    left: 15,
-                    top: 1000,
-                  },
-                }}
-              />
-            </Row>
+                  </ListGroup.Item>
+                </ListGroup>
+              </Card>
+            </Col>
+            <Toaster
+              toastOptions={{
+                className: "",
+                style: {
+                  backgroundColor: "#2d9632",
+                  padding: "5px",
+                  color: "white",
+                  width: "250px",
+                  height: "40px",
+                  left: 15,
+                  top: 1000,
+                },
+              }}
+            />
+          </Row>
 
-            {/* <Row>
+          {/* <Row>
               <Col md={6}>
                 <h2>Reviews</h2>
                 {product.reviews.length === 0 && <Message>No Reviews</Message>}
@@ -425,9 +385,8 @@ export default function ProductHub({ login, setLogin }) {
                 </ListGroup>
               </Col>
             </Row> */}
-          </div>
-        ))}
+        </div>
+        {/* ))} */}
       </div>
     );
   }
-}
