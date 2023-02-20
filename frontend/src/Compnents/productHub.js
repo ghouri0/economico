@@ -37,7 +37,7 @@ export default function ProductHub({ login, setLogin }) {
       setProduct(location.state.item);
     }
   });
-  function handleAddToCart(product) {
+  function handleAddToCart() {
     if (!login) {
       navigate("/login");
     } else {
@@ -50,7 +50,7 @@ export default function ProductHub({ login, setLogin }) {
         },
         seller: product.seller,
       };
-      dispatch(addToCart(product));
+      dispatch(addToCart(item));
       toast("Added to Cart");
     }
   }
